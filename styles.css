@@ -1,0 +1,362 @@
+/* INOS Pitch Deck — extends investor.hempin.org design system */
+
+:root {
+  /* Brand DNA from investor.hempin.org */
+  --bg-0: #07070a;
+  --bg-1: #0b0b0d;
+  --bg-2: #0e0e12;
+  --bg-3: #14141a;
+  --text: #eaeaf2;
+  --text-dim: rgba(234, 234, 242, 0.62);
+  --text-faint: rgba(234, 234, 242, 0.38);
+
+  /* Primary — teal/emerald (per brief, #10B981) */
+  --teal: #10B981;
+  --teal-bright: #34d399;
+  --teal-deep: #047857;
+  --teal-glow: rgba(16, 185, 129, 0.45);
+
+  /* Secondary accents from system */
+  --violet: #6B5CF6;
+  --gold: #F59E0B;
+  --pink: #fb7185;
+
+  /* Glass */
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-bright: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-bright: rgba(255, 255, 255, 0.14);
+  --border-teal: rgba(16, 185, 129, 0.32);
+
+  /* Type */
+  --serif: 'Fraunces', 'Times New Roman', serif;
+  --sans: 'Inter', system-ui, sans-serif;
+  --mono: 'DM Mono', 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-1);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* ---------- Slide foundation ---------- */
+.slide {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  background: var(--bg-1);
+  color: var(--text);
+  overflow: hidden;
+  font-family: var(--sans);
+}
+
+/* Subtle noise texture (mirrors investor.hempin.org body::before) */
+.slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  background-size: 220px 220px;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.slide-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 96px 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Chrome (slide header + footer) ---------- */
+.chrome-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.chrome-top .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--teal);
+  box-shadow: 0 0 8px var(--teal-glow);
+  margin: 0 14px 2px;
+  vertical-align: middle;
+}
+
+.chrome-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: auto;
+}
+
+.chrome-bottom .left { display: flex; gap: 32px; align-items: center; white-space: nowrap; }
+.chrome-bottom .right { display: flex; gap: 32px; align-items: center; white-space: nowrap; }
+
+/* ---------- Type primitives ---------- */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.eyebrow-faint {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+h1.display {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 124px;
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: var(--text);
+  text-wrap: pretty;
+  font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 144;
+}
+
+h1.display em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--teal);
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+
+h2.section-title {
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: 84px;
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  margin: 0;
+  padding-bottom: 0.18em;
+  color: var(--text);
+  text-wrap: balance;
+  font-variation-settings: "SOFT" 50, "opsz" 144;
+}
+
+h2.section-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--teal);
+}
+
+h3.card-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0;
+  color: var(--text);
+  font-variation-settings: "opsz" 36;
+}
+
+p.body {
+  font-family: var(--sans);
+  font-weight: 380;
+  font-size: 22px;
+  line-height: 1.55;
+  color: var(--text-dim);
+  margin: 0;
+  text-wrap: pretty;
+  max-width: 64ch;
+}
+
+p.body-large {
+  font-family: var(--sans);
+  font-weight: 380;
+  font-size: 26px;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0;
+  text-wrap: pretty;
+  max-width: 60ch;
+}
+
+.mono { font-family: var(--mono); }
+.serif { font-family: var(--serif); }
+
+.label {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.metric-num {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 88px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-variation-settings: "opsz" 144;
+  color: var(--text);
+}
+
+/* ---------- Glass card ---------- */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.glass-bright {
+  background: var(--glass-bright);
+  border: 1px solid var(--border-bright);
+}
+
+.glass-teal {
+  background: linear-gradient(180deg, rgba(16,185,129,0.06) 0%, rgba(16,185,129,0.02) 100%);
+  border: 1px solid var(--border-teal);
+  border-radius: 18px;
+}
+
+/* ---------- Decorative botanical/geometric backgrounds ---------- */
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 1;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.bg-aurora {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 900px 600px at 80% 20%, rgba(16,185,129,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 700px 500px at 10% 90%, rgba(107,92,246,0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 1200px 700px at 50% 100%, rgba(16,185,129,0.06) 0%, transparent 70%);
+}
+
+.bg-gradient-soft {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 1100px 700px at 25% 30%, rgba(16,185,129,0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 800px 600px at 85% 80%, rgba(107,92,246,0.06) 0%, transparent 70%);
+}
+
+/* Solarpunk botanical line — abstract, geometric */
+.botanical {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* ---------- Buttons / pills ---------- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border-teal);
+  background: rgba(16,185,129,0.06);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal-bright);
+}
+
+.pill-faint {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--glass);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.tick {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--teal);
+  box-shadow: 0 0 8px var(--teal-glow);
+  flex: none;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.divider-teal {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--teal) 50%, transparent 100%);
+}
+
+/* ---------- Animations ---------- */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 14px rgba(16,185,129,0.35); }
+  50% { box-shadow: 0 0 28px rgba(16,185,129,0.6); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.glow { animation: pulse-glow 2.6s ease-in-out infinite; }
+
+/* ---------- Slide transitions (deck-stage handles selection) ---------- */
+section[data-screen-label] {
+  display: block;
+}
+
+/* deck-stage hides inactive slides via [hidden]; ensure they truly hide */
+section[hidden] { display: none !important; }
