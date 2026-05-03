@@ -77,6 +77,14 @@ html, body {
   padding: 96px 120px;
   display: flex;
   flex-direction: column;
+  max-height: calc(100vh - 140px);
+  overflow: hidden;
+}
+
+/* Content grid utility for scroll-safe inner layouts */
+.content-grid {
+  min-height: 0;
+  overflow: hidden;
 }
 
 /* ---------- Chrome (slide header + footer) ---------- */

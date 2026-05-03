@@ -18,7 +18,7 @@ pitch/
   primitives.jsx   — shared React components: Chrome, ChromeBottom, Botanical, CountUp, useSlideActive
   slides-act1.jsx  — Slides 1-3 (Act I: The Void)
   slides-act2.jsx  — Slides 4-7 (Act II: The Infrastructure)
-  slides-act3.jsx  — Slides 8-12 (Act III: The Moment)
+  slides-act3.jsx  — Slides 8-13 (Act III: The Moment)
   styles.css       — all design tokens and layout
 netlify.toml       — deploy config
 ```
@@ -62,7 +62,12 @@ Font stack: Fraunces (headings/serif class), DM Mono (mono class), Inter (body)
 - Daphne is "Daphne" only — never her last name
 - The ask is €250K bridge round
 - All quotes are verbatim — never alter them
-- The 12 slides follow the NADA → INOS → HEMPIN/DEWII narrative arc
+- The 13 slides follow the NADA → INOS → HEMPIN/DEWII narrative arc
+
+## Current deck state (May 2026)
+- Deck now has 13 slides total
+- Slide 09 = "The Builder" (Paul Iglesia's field work and network)
+- Navigation hint added to Slide 01 (arrow keys + fullscreen)
 
 ## What Claude Code should do
 When asked to work on a slide:

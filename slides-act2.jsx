@@ -23,7 +23,7 @@ function Slide04() {
       <div className="slide-inner">
         <Chrome section="ACT II · THE INFRASTRUCTURE" label="WHAT IT IS" />
 
-        <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "1fr 760px", gap: 88, flex: 1 }}>
+        <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "1fr 760px", gap: 56, flex: 1 }}>
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <div className="eyebrow" style={{ marginBottom: 28 }}>One paragraph, one diagram</div>
             <h2 className="section-title">Not a platform.<br/><em>An operating system.</em></h2>
@@ -60,6 +60,16 @@ function Slide04() {
                 </button>
               ))}
             </div>
+          </div>
+
+          <div style={{ 
+            fontSize: 15, color: "var(--text-dim)", lineHeight: 1.6, 
+            marginBottom: 20, padding: "14px 18px", 
+            border: "1px solid var(--border)", borderRadius: 8,
+            fontStyle: "italic"
+          }}>
+            Think of it as the shared plumbing that lets hemp businesses, regulators, 
+            and researchers finally speak the same language.
           </div>
 
           <StackDiagram active={active} setActive={setActive} />
@@ -148,7 +158,7 @@ function Slide05() {
       <div className="slide-inner">
         <Chrome section="ACT II · THE INFRASTRUCTURE" label="THE TECHNOLOGY" />
 
-        <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 96, alignItems: "start" }}>
+        <div className="content-grid" style={{ marginTop: 36, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "start" }}>
           <div>
             <div className="eyebrow" style={{ marginBottom: 28 }}>The hard problems</div>
             <h2 className="section-title">Why this is <em>research</em>,<br/>not just SaaS.</h2>
@@ -160,7 +170,7 @@ function Slide05() {
             </p>
             <div style={{ marginTop: 40, padding: 24, borderLeft: "2px solid var(--teal)", background: "rgba(16,185,129,0.04)" }}>
               <div className="label" style={{ color: "var(--teal)", marginBottom: 8 }}>EU PUBLIC CO-FUNDING</div>
-              <div className="serif" style={{ fontSize: 22, fontWeight: 380, lineHeight: 1.35 }}>
+              <div className="serif" style={{ fontSize: 18, fontWeight: 380, lineHeight: 1.35 }}>
                 Consortium · non-dilutive · submission May 2026
               </div>
             </div>
@@ -172,9 +182,14 @@ function Slide05() {
                 <div>
                   <div className="serif" style={{ fontSize: 36, fontWeight: 300, color: "var(--teal)", lineHeight: 1 }}>{r.n}</div>
                   <div className="mono" style={{ fontSize: 10, letterSpacing: "0.18em", color: "var(--text-faint)", marginTop: 8 }}>{r.tag}</div>
+                  <div style={{ fontSize: 12, color: "var(--teal)", fontStyle: "italic", fontFamily: "DM Mono", letterSpacing: "0.04em", marginTop: 6 }}>
+                    {r.n === "RQ.01" ? "Plain: 50 countries, 50 different rules. We make the machine resolve the contradictions." :
+                     r.n === "RQ.02" ? "Plain: AI makes things up. We stop it by anchoring every answer to verified data." :
+                     "Plain: When the law is unclear, we encode the uncertainty — not just the rule."}
+                  </div>
                 </div>
                 <div>
-                  <div className="serif" style={{ fontSize: 22, fontWeight: 420, lineHeight: 1.25, color: "var(--text)" }}>{r.title}</div>
+                  <div className="serif" style={{ fontSize: 18, fontWeight: 420, lineHeight: 1.25, color: "var(--text)" }}>{r.title}</div>
                   <div style={{ fontSize: 16, color: "var(--text-dim)", marginTop: 12, lineHeight: 1.5 }}>{r.body}</div>
                 </div>
               </div>
@@ -206,7 +221,7 @@ function Slide06() {
       <div className="slide-inner">
         <Chrome section="ACT II · THE INFRASTRUCTURE" label="REGIONAL BUREAU MODEL" />
 
-        <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "1fr 800px", gap: 96, flex: 1 }}>
+        <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "1fr 800px", gap: 56, flex: 1 }}>
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <div className="eyebrow" style={{ marginBottom: 28 }}>How INOS spreads, without central control</div>
             <h2 className="section-title">Each association<br/><em>becomes a node.</em></h2>
@@ -301,7 +316,7 @@ function Slide07() {
       <div className="slide-inner">
         <Chrome section="ACT II · THE INFRASTRUCTURE" label="THE KNOWLEDGE ECONOMY" />
 
-        <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 96, flex: 1, alignItems: "center" }}>
+        <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, flex: 1, alignItems: "center" }}>
           <div>
             <div className="eyebrow" style={{ marginBottom: 28 }}>Wealth redistribution, written into the protocol</div>
             <h2 className="section-title">Every citation<br/><em>pays the source.</em></h2>
@@ -319,7 +334,7 @@ function Slide07() {
           </div>
 
           <div style={{ position: "relative" }}>
-            <FlowDiagram />
+            <LinearFlow />
           </div>
         </div>
 
@@ -329,83 +344,61 @@ function Slide07() {
   );
 }
 
-function FlowDiagram() {
+function LinearFlow() {
+  const steps = [
+    {
+      icon: "📄",
+      label: "01 CONTRIBUTE",
+      title: "Expert adds knowledge",
+      body: "Researchers, farmers, lab technicians upload verified studies, trial data, regulatory analysis into the SSOT graph.",
+      color: "var(--teal)",
+    },
+    {
+      icon: "💬",
+      label: "02 CITE",
+      title: "BUD answers using it",
+      body: "When an industry actor asks BUD a question, it retrieves and cites the relevant verified sources — with confidence scores and provenance.",
+      color: "var(--violet)",
+    },
+    {
+      icon: "⚡",
+      label: "03 EARN",
+      title: "Creator earns NADA points",
+      body: "Every citation triggers a micro-royalty. The contributor earns every time their work is used — perpetually, automatically, with zero middlemen.",
+      color: "var(--gold)",
+    },
+  ];
+
   return (
-    <div className="glass" style={{ padding: 48, position: "relative" }}>
-      <div className="label" style={{ color: "var(--teal)", marginBottom: 32 }}>THE COMPENSATION LOOP</div>
-      <svg width="100%" viewBox="0 0 600 460" fill="none">
-        {/* center: BUD */}
-        <circle cx="300" cy="230" r="82" fill="rgba(251,113,133,0.08)" stroke="var(--pink)" strokeWidth="1" />
-        <text x="300" y="220" textAnchor="middle" fontFamily="Fraunces" fontSize="34" fontWeight="380" fill="var(--pink)">BUD</text>
-        <text x="300" y="248" textAnchor="middle" fontFamily="DM Mono" fontSize="11" letterSpacing="2.4" fill="var(--text-faint)">AGENT</text>
-
-        {/* contributors top */}
-        <g>
-          <rect x="60" y="40" width="200" height="80" rx="8" fill="var(--glass-bright)" stroke="var(--border)" />
-          <text x="160" y="74" textAnchor="middle" fontFamily="Fraunces" fontSize="20" fill="var(--text)">Contributors</text>
-          <text x="160" y="98" textAnchor="middle" fontFamily="DM Mono" fontSize="10" letterSpacing="2" fill="var(--text-faint)">RESEARCH · FIELD · LAB</text>
-        </g>
-
-        {/* SSOT graph right */}
-        <g>
-          <rect x="420" y="40" width="160" height="80" rx="8" fill="rgba(107,92,246,0.08)" stroke="var(--violet)" />
-          <text x="500" y="74" textAnchor="middle" fontFamily="Fraunces" fontSize="20" fill="var(--violet)">SSOT</text>
-          <text x="500" y="98" textAnchor="middle" fontFamily="DM Mono" fontSize="10" letterSpacing="2" fill="var(--text-faint)">GRAPH</text>
-        </g>
-
-        {/* Industry queries bottom right */}
-        <g>
-          <rect x="380" y="340" width="200" height="80" rx="8" fill="var(--glass-bright)" stroke="var(--border)" />
-          <text x="480" y="374" textAnchor="middle" fontFamily="Fraunces" fontSize="20" fill="var(--text)">Industry</text>
-          <text x="480" y="398" textAnchor="middle" fontFamily="DM Mono" fontSize="10" letterSpacing="2" fill="var(--text-faint)">ASKS QUESTIONS</text>
-        </g>
-
-        {/* NADA royalties bottom left */}
-        <g>
-          <rect x="40" y="340" width="200" height="80" rx="8" fill="rgba(192,132,252,0.06)" stroke="rgba(192,132,252,0.4)" />
-          <text x="140" y="374" textAnchor="middle" fontFamily="Fraunces" fontSize="20" fill="#C084FC">NADA</text>
-          <text x="140" y="398" textAnchor="middle" fontFamily="DM Mono" fontSize="10" letterSpacing="2" fill="var(--text-faint)">ROYALTY POINTS</text>
-        </g>
-
-        {/* arrows */}
-        <defs>
-          <marker id="arrA" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-            <polygon points="0 0, 6 3, 0 6" fill="var(--teal)" />
-          </marker>
-        </defs>
-        {/* Contributors -> SSOT */}
-        <path d="M 260 80 Q 360 40, 420 80" stroke="var(--teal)" strokeWidth="1.4" fill="none" markerEnd="url(#arrA)" />
-        <text x="340" y="36" textAnchor="middle" fontFamily="DM Mono" fontSize="10" letterSpacing="1.6" fill="var(--teal)">CONTRIBUTE</text>
-
-        {/* SSOT -> BUD */}
-        <path d="M 470 120 Q 380 170, 360 175" stroke="var(--teal)" strokeWidth="1.4" fill="none" markerEnd="url(#arrA)" />
-        <text x="430" y="160" textAnchor="middle" fontFamily="DM Mono" fontSize="10" letterSpacing="1.6" fill="var(--teal)">VERIFIED</text>
-
-        {/* Industry -> BUD */}
-        <path d="M 410 365 Q 360 320, 345 295" stroke="var(--teal)" strokeWidth="1.4" fill="none" markerEnd="url(#arrA)" />
-        <text x="410" y="320" textAnchor="middle" fontFamily="DM Mono" fontSize="10" letterSpacing="1.6" fill="var(--teal)">QUERY</text>
-
-        {/* BUD -> NADA -> Contributors */}
-        <path d="M 240 280 Q 200 320, 180 340" stroke="#C084FC" strokeWidth="1.6" fill="none" markerEnd="url(#arrA)" />
-        <path d="M 140 340 Q 100 230, 140 130" stroke="#C084FC" strokeWidth="1.6" fill="none" strokeDasharray="4 4" markerEnd="url(#arrA)" />
-        <text x="80" y="240" textAnchor="middle" fontFamily="DM Mono" fontSize="10" letterSpacing="1.6" fill="#C084FC">ROYALTY</text>
-      </svg>
-
-      <div className="divider" style={{ marginTop: 12 }}></div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24, marginTop: 24 }}>
-        <Stat2 v="∞" l="Citations are perpetual" />
-        <Stat2 v="100%" l="Provenance preserved" />
-        <Stat2 v="0" l="Middlemen" />
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      {steps.map((s, i) => (
+        <div key={i} style={{ display: "flex", gap: 24, alignItems: "flex-start" }}>
+          <div style={{
+            width: 56, height: 56, borderRadius: 12, flexShrink: 0,
+            background: `color-mix(in srgb, ${s.color} 12%, transparent)`,
+            border: `1px solid color-mix(in srgb, ${s.color} 40%, transparent)`,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 24,
+          }}>{s.icon}</div>
+          <div style={{ flex: 1 }}>
+            <div className="mono" style={{ fontSize: 10, letterSpacing: "0.2em", color: s.color, marginBottom: 6 }}>{s.label}</div>
+            <div className="serif" style={{ fontSize: 20, fontWeight: 420, color: "var(--text)", marginBottom: 6 }}>{s.title}</div>
+            <div style={{ fontSize: 14, color: "var(--text-dim)", lineHeight: 1.55 }}>{s.body}</div>
+          </div>
+          {i < steps.length - 1 && (
+            <div style={{ position: "absolute", left: 28, marginTop: 60, height: 16, width: 1, background: "var(--border)" }} />
+          )}
+        </div>
+      ))}
+      <div style={{ 
+        marginTop: 8, padding: "16px 20px", 
+        borderLeft: "2px solid var(--teal)", 
+        background: "rgba(42,157,143,0.04)" 
+      }}>
+        <div className="serif" style={{ fontSize: 18, fontWeight: 380, color: "var(--text)", lineHeight: 1.4 }}>
+          Wealth redistribution is not a feature. It is the protocol.
+        </div>
       </div>
-    </div>
-  );
-}
-
-function Stat2({ v, l }) {
-  return (
-    <div>
-      <div className="serif" style={{ fontSize: 36, fontWeight: 300, color: "var(--teal)" }}>{v}</div>
-      <div className="label" style={{ marginTop: 6 }}>{l}</div>
     </div>
   );
 }

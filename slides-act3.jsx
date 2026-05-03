@@ -1,7 +1,7 @@
 /* global React, Chrome, ChromeBottom, Botanical, CountUp, useSlideActive */
 const { useRef, useEffect, useState } = React;
 
-const TOTAL_A3 = 12;
+const TOTAL_A3 = 13;
 
 // ============================================================
 //  SLIDE 8 — TRACTION (animated counters)
@@ -31,7 +31,7 @@ function Slide08() {
           <BigStat n={14} label="Problem confirmed" sub="14 / 14 of substantive replies" active={active} />
         </div>
 
-        <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, flex: 1 }}>
+        <div className="content-grid" style={{ marginTop: 36, display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, flex: 1 }}>
           <div className="glass" style={{ padding: 36 }}>
             <div className="label" style={{ color: "var(--teal)", marginBottom: 24 }}>WHO REPLIED — AND WHAT THEY ASKED FOR</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
@@ -59,15 +59,15 @@ function Slide08() {
           <div className="glass-teal" style={{ padding: 36, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <div>
               <div className="label" style={{ color: "var(--teal)", marginBottom: 18 }}>WHY THIS MATTERS</div>
-              <div className="serif" style={{ fontSize: 26, fontWeight: 380, lineHeight: 1.35, color: "var(--text)" }}>
+              <div className="serif" style={{ fontSize: 22, fontWeight: 380, lineHeight: 1.35, color: "var(--text)" }}>
                 Cold outreach in B2B infrastructure converts at 1–3%. We hit <span style={{ color: "var(--teal-bright)" }}>7.9%</span> with no warm intro, no pitch deck, and no product to demo.
               </div>
             </div>
             <div style={{ marginTop: 28 }}>
-              <div className="serif" style={{ fontSize: 20, fontWeight: 380, color: "var(--text)", lineHeight: 1.4 }}>
+              <div className="serif" style={{ fontSize: 18, fontWeight: 380, color: "var(--text)", lineHeight: 1.4 }}>
                 The signal is not "people will use this if you build it."
               </div>
-              <div className="serif" style={{ fontSize: 22, fontWeight: 420, color: "var(--teal-bright)", lineHeight: 1.4, marginTop: 8 }}>
+              <div className="serif" style={{ fontSize: 18, fontWeight: 420, color: "var(--teal-bright)", lineHeight: 1.4, marginTop: 8 }}>
                 It is "people are angry it does not exist yet."
               </div>
             </div>
@@ -95,7 +95,65 @@ function BigStat({ n, label, sub, suffix = "", decimals = 0, active, accent = fa
 }
 
 // ============================================================
-//  SLIDE 9 — CAPITAL STACK (interactive)
+//  SLIDE 9 — THE BUILDER (Paul's field work)
+// ============================================================
+function Slide09() {
+  return (
+    <section data-screen-label="09 The builder" className="slide">
+      <div className="bg-gradient-soft"></div>
+      <Botanical style={{ right: 60, top: 80, width: 180, height: 680 }} opacity={0.18} />
+      <div className="slide-inner">
+        <Chrome section="ACT III · THE MOMENT" label="WHO IS BUILDING THIS" />
+
+        <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "1fr 640px", gap: 80, flex: 1, alignItems: "center" }}>
+          <div>
+            <div className="eyebrow" style={{ marginBottom: 28 }}>The reason the traction is real</div>
+            <h2 className="section-title">Not a startup.<br/><em>A decade of field work.</em></h2>
+            <p className="body-large" style={{ marginTop: 32 }}>
+              Paul Iglesia has spent years on the ground — at hemp conferences across 
+              Europe and Asia, at UNCTAD workshops, in policy rooms and farm fields. 
+              The 266 contacts in the outreach campaign were not bought from a database. 
+              They were built, conversation by conversation, over years.
+            </p>
+            <p className="body" style={{ marginTop: 24 }}>
+              The 21 replies in 24 hours happened because the people who replied 
+              already knew Paul was serious, or knew someone who did. That network 
+              is the moat. It cannot be replicated by a team that just discovered hemp.
+            </p>
+            <p className="body" style={{ marginTop: 24 }}>
+              Daphne brings the financial architecture and the founding capital. 
+              Paul brings the map of who the industry actually is, and the energy 
+              to activate it.
+            </p>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {[
+              { label: "Years on the ground", value: "5+", sub: "Conferences across EU, Asia, Americas" },
+              { label: "Industry contacts (active)", value: "328", sub: "Personally built, no database" },
+              { label: "Outreach response rate", value: "7.9%", sub: "vs 1–3% industry average" },
+              { label: "Countries in conversation", value: "6", sub: "Before a single product is live" },
+              { label: "Co-founder role", value: "Daphne", sub: "Financial anchor · Founding partner" },
+            ].map((item, i) => (
+              <div key={i} className="glass" style={{ padding: "18px 24px", display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", gap: 24 }}>
+                <div>
+                  <div className="serif" style={{ fontSize: 17, fontWeight: 420, color: "var(--text)" }}>{item.label}</div>
+                  <div className="mono" style={{ fontSize: 11, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 4 }}>{item.sub}</div>
+                </div>
+                <div className="serif" style={{ fontSize: 36, fontWeight: 300, color: "var(--teal)", letterSpacing: "-0.02em" }}>{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <ChromeBottom slideNum={9} total={TOTAL_A3} />
+      </div>
+    </section>
+  );
+}
+
+// ============================================================
+//  SLIDE 10 — CAPITAL STACK (interactive)
 // ============================================================
 const SOURCES = [
   {
@@ -131,11 +189,14 @@ const SOURCES = [
   },
 ];
 
-function Slide09() {
+// ============================================================
+//  SLIDE 10 — CAPITAL STACK (interactive)
+// ============================================================
+function Slide10() {
   const [active, setActive] = useState("bridge");
   const cur = SOURCES.find(s => s.id === active);
   return (
-    <section data-screen-label="09 Capital stack" className="slide">
+    <section data-screen-label="10 Capital stack" className="slide">
       <div className="bg-gradient-soft"></div>
       <div className="slide-inner">
         <Chrome section="ACT III · THE MOMENT" label="THE CAPITAL STACK" />
@@ -147,7 +208,7 @@ function Slide09() {
           </h2>
         </div>
 
-        <div style={{ marginTop: 64, display: "grid", gridTemplateColumns: "1fr 720px", gap: 80, flex: 1 }}>
+        <div style={{ marginTop: 64, display: "grid", gridTemplateColumns: "1fr 720px", gap: 56, flex: 1 }}>
           <div>
             <div className="label" style={{ marginBottom: 20 }}>RELATIVE SCALE — HOVER TO INSPECT</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
@@ -218,16 +279,16 @@ function Slide09() {
           </div>
         </div>
 
-        <ChromeBottom slideNum={9} total={TOTAL_A3} />
+        <ChromeBottom slideNum={10} total={TOTAL_A3} />
       </div>
     </section>
   );
 }
 
 // ============================================================
-//  SLIDE 10 — LEGAL STRUCTURE (Daphne's slide)
+//  SLIDE 11 — LEGAL STRUCTURE (Daphne's slide)
 // ============================================================
-function Slide10() {
+function Slide11() {
   const ENTITIES = [
     {
       n: "I",
@@ -261,7 +322,7 @@ function Slide10() {
       <div className="slide-inner">
         <Chrome section="ACT III · THE MOMENT" label="LEGAL STRUCTURE — DAPHNE PRESENTS" />
 
-        <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "1fr 880px", gap: 80, flex: 1 }}>
+        <div className="content-grid" style={{ marginTop: 36, display: "grid", gridTemplateColumns: "1fr 880px", gap: 56, flex: 1 }}>
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <div className="eyebrow" style={{ marginBottom: 28 }}>Three jurisdictions, one mission lock</div>
             <h2 className="section-title">A vehicle that<br/><em>cannot be captured.</em></h2>
@@ -301,7 +362,7 @@ function Slide10() {
                   <span className="mono" style={{ fontSize: 18, fontWeight: 500, letterSpacing: "0.1em", color: e.now ? "var(--teal-bright)" : "var(--text-dim)" }}>{e.tag}</span>
                 </div>
                 <div>
-                  <div className="serif" style={{ fontSize: 22, fontWeight: 420, lineHeight: 1.2 }}>{e.name}</div>
+                  <div className="serif" style={{ fontSize: 18, fontWeight: 420, lineHeight: 1.2 }}>{e.name}</div>
                   <div className="mono" style={{ fontSize: 11, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 4 }}>{e.sub.toUpperCase()}</div>
                   <div style={{ fontSize: 14, color: "var(--text-dim)", marginTop: 12, lineHeight: 1.5, maxWidth: 480 }}>{e.role}</div>
                 </div>
@@ -314,16 +375,16 @@ function Slide10() {
           </div>
         </div>
 
-        <ChromeBottom slideNum={10} total={TOTAL_A3} />
+        <ChromeBottom slideNum={11} total={TOTAL_A3} />
       </div>
     </section>
   );
 }
 
 // ============================================================
-//  SLIDE 11 — THE ASK
+//  SLIDE 12 — THE ASK
 // ============================================================
-function Slide11() {
+function Slide12() {
   const INSTRUMENTS = [
     {
       tag: "A",
@@ -367,7 +428,7 @@ function Slide11() {
           </div>
         </div>
 
-        <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 32, flex: 1 }}>
+        <div className="content-grid" style={{ marginTop: 36, display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 32, flex: 1 }}>
           {/* Use of funds */}
           <div className="glass" style={{ padding: 36 }}>
             <div className="label" style={{ marginBottom: 24 }}>USE OF FUNDS — €250K</div>
@@ -407,10 +468,10 @@ function Slide11() {
                   background: "rgba(16,185,129,0.08)", border: "1px solid var(--border-teal)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
-                  <span className="serif" style={{ fontSize: 22, fontWeight: 420, color: "var(--teal-bright)" }}>{ins.tag}</span>
+                  <span className="serif" style={{ fontSize: 18, fontWeight: 420, color: "var(--teal-bright)" }}>{ins.tag}</span>
                 </div>
                 <div>
-                  <div className="serif" style={{ fontSize: 22, fontWeight: 420, color: "var(--text)" }}>{ins.name}</div>
+                  <div className="serif" style={{ fontSize: 18, fontWeight: 420, color: "var(--text)" }}>{ins.name}</div>
                   <div style={{ fontSize: 14, color: "var(--text-dim)", marginTop: 8, lineHeight: 1.5 }}>{ins.desc}</div>
                 </div>
               </div>
@@ -427,18 +488,18 @@ function Slide11() {
           </div>
         </div>
 
-        <ChromeBottom slideNum={11} total={TOTAL_A3} />
+        <ChromeBottom slideNum={12} total={TOTAL_A3} />
       </div>
     </section>
   );
 }
 
 // ============================================================
-//  SLIDE 12 — WHY NOW / WHY US
+//  SLIDE 13 — WHY NOW / WHY US
 // ============================================================
-function Slide12() {
+function Slide13() {
   return (
-    <section data-screen-label="12 Why now" className="slide">
+    <section data-screen-label="13 Why now" className="slide">
       <div className="bg-aurora"></div>
       <div className="bg-grid"></div>
       <Botanical style={{ left: 60, top: 100, width: 200, height: 700 }} opacity={0.22} />
@@ -495,7 +556,7 @@ function Slide12() {
           </div>
         </div>
 
-        <ChromeBottom slideNum={12} total={TOTAL_A3} />
+        <ChromeBottom slideNum={13} total={TOTAL_A3} />
       </div>
     </section>
   );
@@ -516,3 +577,4 @@ window.Slide09 = Slide09;
 window.Slide10 = Slide10;
 window.Slide11 = Slide11;
 window.Slide12 = Slide12;
+window.Slide13 = Slide13;

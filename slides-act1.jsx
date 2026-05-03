@@ -56,7 +56,21 @@ function Slide01() {
               </div>
             </div>
           </div>
-          <div className="mono" style={{ fontSize: 12, color: "var(--text-faint)", letterSpacing: "0.18em" }}>01 / 12</div>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8 }}>
+            <div className="mono" style={{ fontSize: 12, color: "var(--text-faint)", letterSpacing: "0.18em" }}>01 / 12</div>
+            <div style={{ 
+              display: "flex", 
+              gap: 20, 
+              alignItems: "center" 
+            }}>
+              <div className="mono" style={{ fontSize: 11, letterSpacing: "0.16em", color: "var(--text-faint)" }}>
+                → ARROW KEYS TO ADVANCE
+              </div>
+              <div className="mono" style={{ fontSize: 11, letterSpacing: "0.16em", color: "var(--text-faint)" }}>
+                F FULLSCREEN
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -100,7 +114,7 @@ function Slide02() {
       <div className="slide-inner">
         <Chrome section="ACT I · THE VOID" label="THE PROBLEM" />
 
-        <div style={{ display: "grid", gridTemplateColumns: "440px 1fr", gap: 80, marginTop: 56, flex: 1 }}>
+        <div className="content-grid" style={{ display: "grid", gridTemplateColumns: "440px 1fr", gap: 56, marginTop: 36, flex: 1 }}>
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <div>
               <div className="eyebrow" style={{ marginBottom: 28 }}>Validated by the field, in 24 hours</div>
@@ -163,24 +177,39 @@ function Slide03() {
       <Botanical style={{ right: 60, top: 80, width: 200, height: 700 }} opacity={0.18} />
 
       <div className="slide-inner">
-        <Chrome section="ACT I · THE VOID" label="WHY IT'S UNSOLVED" />
+        <Chrome section="ACT I · THE VOID" label="THE DEMAND EXISTS · IT JUST CAN'T FLOW" />
 
-        <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "1fr 720px", gap: 96, flex: 1, alignItems: "center" }}>
+        <div style={{ marginTop: 36, display: "grid", gridTemplateColumns: "1fr 720px", gap: 64, flex: 1, alignItems: "center" }}>
           <div>
-            <div className="eyebrow" style={{ marginBottom: 28 }}>The Igor Bogdanovic story</div>
-            <h2 className="section-title">Someone already <em>tried.</em></h2>
+            <div className="eyebrow" style={{ marginBottom: 20 }}>Field evidence — Serbia, 2019</div>
+            
+            {/* Stat bar */}
+            <div className="mono" style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-faint)", marginBottom: 28 }}>
+              Still active<span className="dot"></span>Self-generating<span className="dot"></span>Hundreds of members<span className="dot"></span>6 years without infrastructure
+            </div>
+            
+            <h2 className="section-title">The market built itself<br/><em>around the gap.</em></h2>
             <p className="body-large" style={{ marginTop: 36 }}>
-              <span style={{ color: "var(--text)", fontWeight: 450 }}>HempTradeMarket.com</span> — built six years ago by Igor Bogdanovic in Serbia. Hundreds of members. Real trade. Self-generating to this day.
+              HempTradeMarket.com launched in Serbia in 2019 — no outside funding, no 
+              infrastructure. Today it still has hundreds of members doing real trade, 
+              entirely self-generated. The demand was never the question.
             </p>
             <p className="body" style={{ marginTop: 24 }}>
-              It could not be monetised. Stripe and other payment rails reject companies
-              with "hemp" in their title or business — not because the market is illegal,
-              but because there is no verified identity layer letting a processor confirm
-              legitimacy. The team could not be paid. The platform froze.
+              What stopped it scaling was not the market. Stripe and other payment rails 
+              reject companies with 'hemp' in their business name — not because the 
+              activity is illegal, but because there is no verified identity layer letting 
+              a processor confirm legitimacy. The infrastructure was missing.
             </p>
-            <p className="body" style={{ marginTop: 24, color: "var(--text)", fontStyle: "italic" }}>
-              "I still need partners in order to restart it." — Igor Bogdanovic
-            </p>
+            
+            {/* Highlighted callout box */}
+            <div style={{ marginTop: 32, padding: "20px 24px", borderLeft: "3px solid var(--teal)", background: "rgba(42, 157, 143, 0.08)" }}>
+              <div className="mono" style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--teal-light)", marginBottom: 10 }}>
+                IGOR BOGDANOVIC · HEMPTRADEMARKET.COM · SERBIA
+              </div>
+              <div className="serif" style={{ fontSize: 18, fontWeight: 400, color: "var(--text)", fontStyle: "italic" }}>
+                "I still need partners in order to restart it."
+              </div>
+            </div>
           </div>
 
           <div style={{ position: "relative" }}>
@@ -200,7 +229,7 @@ function Timeline() {
     { y: "2020", h: "Hundreds of members", b: "Self-generated trust. Manual verification.", live: true },
     { y: "2021", h: "Stripe blocks payments", b: "No verified actor identity layer below.", failed: true },
     { y: "2022—24", h: "Market keeps running", b: "Off-platform, unrouted, unbankable.", live: true },
-    { y: "2026", h: "INOS provides the layer", b: "Verified actor identity. Regulatory encoding. Knowledge graph.", solved: true },
+    { y: "2026", h: "INOS provides the verified identity layer", b: "The missing piece below every marketplace, payment rail, and cross-border transaction in hemp.", solved: true },
   ];
   return (
     <div className="glass" style={{ padding: 40, position: "relative" }}>
