@@ -24,17 +24,17 @@ function Slide08() {
           </h2>
         </div>
 
-        <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+        <div style={{ marginTop: 32, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
           <BigStat n={266} label="Emails sent" sub="30+ countries · April 28–29" active={active} />
           <BigStat n={30} label="Replies in 9 days" sub="23 substantive · 7 OOO/auto" active={active} accent />
           <BigStat n={11.3} label="Response rate" suffix="%" decimals={1} sub="Industry average: 1–3%" active={active} />
           <BigStat n={23} label="Problem confirmed" sub="23 / 23 of substantive replies" active={active} />
         </div>
 
-        <div className="content-grid" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, flex: 1 }}>
-          <div className="glass" style={{ padding: 28 }}>
-            <div className="label" style={{ color: "var(--teal)", marginBottom: 18 }}>WHO REPLIED — AND WHAT THEY ASKED FOR</div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+        <div className="content-grid" style={{ marginTop: 20, display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 24, flex: 1 }}>
+          <div className="glass" style={{ padding: 20 }}>
+            <div className="label" style={{ color: "var(--teal)", marginBottom: 14 }}>WHO REPLIED — AND WHAT THEY ASKED FOR</div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
               {[
                 { who: "Jeff Kostuik · CHTA / Verve Seeds (CA)", ask: "Requested a call" },
                 { who: "Marco Fugazza · UNCTAD (Intl)", ask: "Requested a call" },
@@ -45,29 +45,29 @@ function Slide08() {
                 { who: "Sepi Rad · HempGenTech Group", ask: "Requested deck + governance" },
                 { who: "+ 15 more substantive replies", ask: "Same diagnosis · 23 / 23" },
               ].map((r, i) => (
-                <div key={i} style={{ display: "grid", gridTemplateColumns: "10px 1fr", gap: 12, alignItems: "start", padding: "10px 0", borderBottom: i < 6 ? "1px solid var(--border)" : "none" }}>
-                  <div className="tick" style={{ marginTop: 6 }}></div>
+                <div key={i} style={{ display: "grid", gridTemplateColumns: "10px 1fr", gap: 10, alignItems: "start", padding: "8px 0", borderBottom: i < 6 ? "1px solid var(--border)" : "none" }}>
+                  <div className="tick" style={{ marginTop: 4 }}></div>
                   <div>
-                    <div className="serif" style={{ fontSize: 15, fontWeight: 420, color: "var(--text)" }}>{r.who}</div>
-                    <div className="mono" style={{ fontSize: 10, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 2 }}>{r.ask}</div>
+                    <div className="serif" style={{ fontSize: 13, fontWeight: 420, color: "var(--text)" }}>{r.who}</div>
+                    <div className="mono" style={{ fontSize: 9, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 2 }}>{r.ask}</div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="glass-teal" style={{ padding: 28, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+          <div className="glass-teal" style={{ padding: 20, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <div>
-              <div className="label" style={{ color: "var(--teal)", marginBottom: 18 }}>WHY THIS MATTERS</div>
-              <div className="serif" style={{ fontSize: 19, fontWeight: 380, lineHeight: 1.35, color: "var(--text)" }}>
+              <div className="label" style={{ color: "var(--teal)", marginBottom: 14 }}>WHY THIS MATTERS</div>
+              <div className="serif" style={{ fontSize: 16, fontWeight: 380, lineHeight: 1.35, color: "var(--text)" }}>
                 Cold outreach in B2B infrastructure converts at 1–3%. We hit <span style={{ color: "var(--teal-bright)" }}>11.3%</span> with no warm intro, no pitch deck, and no product to demo.
               </div>
             </div>
-            <div style={{ marginTop: 20 }}>
-              <div className="serif" style={{ fontSize: 16, fontWeight: 380, color: "var(--text)", lineHeight: 1.4 }}>
+            <div style={{ marginTop: 16 }}>
+              <div className="serif" style={{ fontSize: 14, fontWeight: 380, color: "var(--text)", lineHeight: 1.4 }}>
                 The signal is not "people will use this if you build it."
               </div>
-              <div className="serif" style={{ fontSize: 16, fontWeight: 420, color: "var(--teal-bright)", lineHeight: 1.4, marginTop: 6 }}>
+              <div className="serif" style={{ fontSize: 14, fontWeight: 420, color: "var(--teal-bright)", lineHeight: 1.4, marginTop: 4 }}>
                 It is "people are angry it does not exist yet."
               </div>
             </div>
