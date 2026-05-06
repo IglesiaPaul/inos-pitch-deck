@@ -20,15 +20,15 @@ function Slide08() {
         <div style={{ marginTop: 56 }}>
           <div className="eyebrow" style={{ marginBottom: 24 }}>This is not projected. This happened last week.</div>
           <h2 className="section-title" style={{ maxWidth: 1500 }}>
-            24 hours of <em>response</em> —<br/>14 substantive replies, all aligned.
+            9 days of <em>response</em> —<br/>23 substantive replies, all aligned.
           </h2>
         </div>
 
         <div style={{ marginTop: 64, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
           <BigStat n={266} label="Emails sent" sub="30+ countries · April 28–29" active={active} />
-          <BigStat n={21} label="Replies in 24 hours" sub="14 substantive · 7 OOO/auto" active={active} accent />
-          <BigStat n={7.9} label="Response rate" suffix="%" decimals={1} sub="Industry average: 1–3%" active={active} />
-          <BigStat n={14} label="Problem confirmed" sub="14 / 14 of substantive replies" active={active} />
+          <BigStat n={30} label="Replies in 9 days" sub="23 substantive · 7 OOO/auto" active={active} accent />
+          <BigStat n={11.3} label="Response rate" suffix="%" decimals={1} sub="Industry average: 1–3%" active={active} />
+          <BigStat n={23} label="Problem confirmed" sub="23 / 23 of substantive replies" active={active} />
         </div>
 
         <div className="content-grid" style={{ marginTop: 36, display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, flex: 1 }}>
@@ -43,7 +43,7 @@ function Slide08() {
                 { who: "Nathalie Fichaux · InterChanvre (FR)", ask: "Prospective consortium partner" },
                 { who: "Igor Bogdanovic · HempTradeMarket (RS)", ask: "Wants infrastructure partner" },
                 { who: "Sepi Rad · HempGenTech Group", ask: "Requested deck + governance" },
-                { who: "+ 6 more substantive replies", ask: "Same diagnosis · 14 / 14" },
+                { who: "+ 15 more substantive replies", ask: "Same diagnosis · 23 / 23" },
               ].map((r, i) => (
                 <div key={i} style={{ display: "grid", gridTemplateColumns: "10px 1fr", gap: 14, alignItems: "start", padding: "10px 0", borderBottom: i < 6 ? "1px solid var(--border)" : "none" }}>
                   <div className="tick" style={{ marginTop: 8 }}></div>
@@ -60,7 +60,7 @@ function Slide08() {
             <div>
               <div className="label" style={{ color: "var(--teal)", marginBottom: 18 }}>WHY THIS MATTERS</div>
               <div className="serif" style={{ fontSize: 22, fontWeight: 380, lineHeight: 1.35, color: "var(--text)" }}>
-                Cold outreach in B2B infrastructure converts at 1–3%. We hit <span style={{ color: "var(--teal-bright)" }}>7.9%</span> with no warm intro, no pitch deck, and no product to demo.
+                Cold outreach in B2B infrastructure converts at 1–3%. We hit <span style={{ color: "var(--teal-bright)" }}>11.3%</span> with no warm intro, no pitch deck, and no product to demo.
               </div>
             </div>
             <div style={{ marginTop: 28 }}>
@@ -116,12 +116,12 @@ function Slide09() {
               They were built, conversation by conversation, over years.
             </p>
             <p className="body" style={{ marginTop: 24 }}>
-              The 21 replies in 24 hours happened because the people who replied 
+              The 30 replies in 9 days happened because the people who replied 
               already knew Paul was serious, or knew someone who did. That network 
               is the moat. It cannot be replicated by a team that just discovered hemp.
             </p>
             <p className="body" style={{ marginTop: 24 }}>
-              Daphne brings the financial architecture and the founding capital. 
+              A financial partner brings the financial architecture and the founding capital. 
               Paul brings the map of who the industry actually is, and the energy 
               to activate it.
             </p>
@@ -131,9 +131,9 @@ function Slide09() {
             {[
               { label: "Years on the ground", value: "5+", sub: "Conferences across EU, Asia, Americas" },
               { label: "Industry contacts (active)", value: "328", sub: "Personally built, no database" },
-              { label: "Outreach response rate", value: "7.9%", sub: "vs 1–3% industry average" },
+              { label: "Outreach response rate", value: "11.3%", sub: "vs 1–3% industry average" },
               { label: "Countries in conversation", value: "6", sub: "Before a single product is live" },
-              { label: "Co-founder role", value: "Daphne", sub: "Financial anchor · Founding partner" },
+              { label: "Financial partner role", value: "CFO partner", sub: "Structuring French Association + Commercial Entity" },
             ].map((item, i) => (
               <div key={i} className="glass" style={{ padding: "18px 24px", display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", gap: 24 }}>
                 <div>
@@ -179,7 +179,7 @@ const SOURCES = [
   {
     id: "bridge",
     label: "Bridge round",
-    amount: "€250K",
+    amount: "€100K-250K",
     type: "Convertible / royalty / advisory",
     timing: "This month",
     funds: "Pre-grant operations: 6–12 months of runway between today and the public co-funding decision. Foundation incorporation, Swiss OpCo prep, regional onboarding, BUD beta.",
@@ -286,7 +286,7 @@ function Slide10() {
 }
 
 // ============================================================
-//  SLIDE 11 — LEGAL STRUCTURE (Daphne's slide)
+//  SLIDE 11 — LEGAL STRUCTURE
 // ============================================================
 function Slide11() {
   const ENTITIES = [
@@ -301,50 +301,42 @@ function Slide11() {
     },
     {
       n: "II",
-      name: "Swiss OpCo",
-      sub: "AG / Sàrl — to be incorporated",
+      name: "Commercial Operating Entity",
+      sub: "S.à r.l. to be formed",
       status: "Post-grant award",
       role: "Commercial exploitation vehicle. Where convertibles convert. Where revenue from licensed deployments flows.",
-      tag: "CH",
-    },
-    {
-      n: "III",
-      name: "Luxembourg SOPARFI",
-      sub: "Holding · IP licensing",
-      status: "Long-term",
-      role: "IP licensing entity for cross-border exploitation. Activated when revenue scale justifies it. Tax-treaty friendly.",
-      tag: "LU",
+      tag: "OpCo",
     },
   ];
   return (
     <section data-screen-label="10 Legal" className="slide">
       <div className="bg-gradient-soft"></div>
       <div className="slide-inner">
-        <Chrome section="ACT III · THE MOMENT" label="LEGAL STRUCTURE — DAPHNE PRESENTS" />
+        <Chrome section="ACT III · THE MOMENT" label="LEGAL STRUCTURE" />
 
         <div className="content-grid" style={{ marginTop: 36, display: "grid", gridTemplateColumns: "1fr 880px", gap: 56, flex: 1 }}>
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <div className="eyebrow" style={{ marginBottom: 28 }}>Three jurisdictions, one mission lock</div>
+            <div className="eyebrow" style={{ marginBottom: 28 }}>Two-tier structure, mission-locked</div>
             <h2 className="section-title">A vehicle that<br/><em>cannot be captured.</em></h2>
             <p className="body-large" style={{ marginTop: 36 }}>
               The architecture is deliberate. The IP and the mission live in a French
-              non-profit. Commercial exploitation lives in a Swiss operating company,
-              incorporated only once the EIC grant is awarded. Long-term licensing flows
-              through a Luxembourg holding when scale justifies the structure.
+              non-profit association. Commercial exploitation lives in a separate
+              operating company (S.à r.l. to be formed), incorporated once the EIC
+              grant is awarded.
             </p>
             <p className="body" style={{ marginTop: 24 }}>
               Investors in the bridge round receive instruments that convert into the
-              Swiss OpCo or accrue royalty rights against the Luxembourg holding —
-              never equity in the foundation itself.
+              Commercial Operating Entity or accrue royalty rights — never equity
+              in the foundation itself.
             </p>
 
             <div style={{ marginTop: 36, padding: 18, background: "rgba(16,185,129,0.05)", border: "1px solid var(--border-teal)", borderRadius: 12, display: "flex", alignItems: "center", gap: 16 }}>
               <div style={{ width: 40, height: 40, borderRadius: 999, background: "rgba(16,185,129,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span className="serif" style={{ fontSize: 18, color: "var(--teal-bright)" }}>D</span>
+                <span className="serif" style={{ fontSize: 18, color: "var(--teal-bright)" }}>P</span>
               </div>
               <div>
-                <div className="serif" style={{ fontSize: 17, fontWeight: 420 }}>Daphne presents this slide</div>
-                <div className="mono" style={{ fontSize: 11, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 2 }}>FINANCIAL ANCHOR · FOUNDING PARTNER</div>
+                <div className="serif" style={{ fontSize: 17, fontWeight: 420 }}>Paul Iglesia presents</div>
+                <div className="mono" style={{ fontSize: 11, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 2 }}>FOUNDER · FIELD ORIGINATOR</div>
               </div>
             </div>
           </div>
@@ -389,22 +381,22 @@ function Slide12() {
     {
       tag: "A",
       name: "Convertible note",
-      desc: "Converts into Swiss OpCo equity at the priced round following the public co-funding award. Discount + cap protection. Most analogous to a SAFE for an audience used to that structure.",
+      desc: "Converts into Commercial OpCo equity at the priced round following the public co-funding award. Discount + cap protection. Most analogous to a SAFE for an audience used to that structure.",
     },
     {
       tag: "B",
       name: "Royalty participation",
-      desc: "A defined share of revenue from licensed regional deployments, paid through the Luxembourg holding once it activates. Non-equity. Caps at a multiple of contribution.",
+      desc: "A defined share of revenue from licensed regional deployments, paid through the Commercial Operating Entity once it activates. Non-equity. Caps at a multiple of contribution.",
     },
     {
       tag: "C",
       name: "Advisory + observer",
-      desc: "Advisory contract with the foundation, board observer rights to the Swiss OpCo at incorporation, founding-stakeholder recognition in the SSOT graph itself.",
+      desc: "Advisory contract with the foundation, board observer rights to the Commercial Operating Entity at incorporation, founding-stakeholder recognition in the SSOT graph itself.",
     },
   ];
   const USES = [
     { pct: 35, label: "Foundation incorporation & legal", color: "var(--teal)" },
-    { pct: 28, label: "Pre-grant team — 4 FTE × 9mo", color: "var(--teal-bright)" },
+    { pct: 28, label: "Pre-grant team — 4 FTE × 6mo", color: "var(--teal-bright)" },
     { pct: 18, label: "BUD beta + SSOT v0", color: "var(--violet)" },
     { pct: 12, label: "Regional bureau onboarding", color: "var(--gold)" },
     { pct: 7, label: "Reserve", color: "var(--text-faint)" },
@@ -419,7 +411,7 @@ function Slide12() {
           <div className="eyebrow" style={{ marginBottom: 24 }}>What the bridge funds, what is on offer, why now</div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr auto", alignItems: "end", gap: 48 }}>
             <h2 className="section-title">
-              <em>€250K</em> · 6–12 months ·<br/>founding stakeholder.
+              <em>€100,000 – €250,000</em> · 6–12 months ·<br/>founding stakeholder.
             </h2>
             <div style={{ textAlign: "right" }}>
               <div className="label" style={{ marginBottom: 6 }}>WINDOW CLOSES</div>
@@ -431,7 +423,7 @@ function Slide12() {
         <div className="content-grid" style={{ marginTop: 36, display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 32, flex: 1 }}>
           {/* Use of funds */}
           <div className="glass" style={{ padding: 36 }}>
-            <div className="label" style={{ marginBottom: 24 }}>USE OF FUNDS — €250K</div>
+            <div className="label" style={{ marginBottom: 24 }}>USE OF FUNDS — €100K-250K</div>
             <div style={{ display: "flex", height: 26, borderRadius: 6, overflow: "hidden", border: "1px solid var(--border)" }}>
               {USES.map((u, i) => (
                 <div key={i} style={{ width: `${u.pct}%`, background: u.color, opacity: 0.85 }}></div>
@@ -451,7 +443,7 @@ function Slide12() {
             <div style={{ marginTop: 24 }}>
               <div className="label" style={{ marginBottom: 10 }}>WHEN CO-FUNDING IS AWARDED</div>
               <div className="serif" style={{ fontSize: 20, fontWeight: 380, lineHeight: 1.45, color: "var(--text)" }}>
-                Bridge instruments convert into the Swiss OpCo at the priced round.
+                Bridge instruments convert into the Commercial OpCo at the priced round.
                 Royalty participants begin accruing against licensed deployments.
                 Foundation transitions from incorporation to operating mode.
               </div>
@@ -520,7 +512,7 @@ function Slide13() {
             <Conviction
               tag="01"
               title="The demand is verified"
-              body="21 industry experts confirmed the same diagnosis in 24 hours. 7.9% response on cold outreach. Six countries already in pipeline."
+              body="30 industry experts confirmed the same diagnosis in 9 days. 11.3% response on cold outreach. Six countries already in pipeline."
             />
             <Conviction
               tag="02"
@@ -530,7 +522,7 @@ function Slide13() {
             <Conviction
               tag="03"
               title="The vehicle is mission-locked"
-              body="French association holds IP. Swiss OpCo handles commercial exploitation. The protocol cannot be acquired or captured."
+              body="French association holds IP. Commercial Operating Entity handles commercial exploitation. The protocol cannot be acquired or captured."
             />
             <Conviction
               tag="04"
@@ -548,8 +540,6 @@ function Slide13() {
             </div>
             <div style={{ display: "flex", gap: 32, marginTop: 28, alignItems: "center" }}>
               <div className="serif" style={{ fontSize: 20, fontWeight: 420 }}>Paul Iglesia</div>
-              <div className="mono" style={{ fontSize: 12, letterSpacing: "0.16em", color: "var(--text-faint)" }}>·</div>
-              <div className="serif" style={{ fontSize: 20, fontWeight: 420 }}>Daphne</div>
               <div className="mono" style={{ fontSize: 12, letterSpacing: "0.16em", color: "var(--text-faint)" }}>·</div>
               <div className="mono" style={{ fontSize: 13, letterSpacing: "0.18em", color: "var(--teal-bright)" }}>INOS FOUNDATION FRANCE · MAY 2026</div>
             </div>

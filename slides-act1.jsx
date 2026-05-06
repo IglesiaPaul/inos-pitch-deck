@@ -41,7 +41,7 @@ function Slide01() {
           <div style={{ display: "flex", gap: 80 }}>
             <div>
               <div className="label" style={{ marginBottom: 10 }}>Presented by</div>
-              <div className="serif" style={{ fontSize: 26, lineHeight: 1.35, fontWeight: 350 }}>Paul Iglesia<br/>Daphne</div>
+              <div className="serif" style={{ fontSize: 26, lineHeight: 1.35, fontWeight: 350 }}>Paul Iglesia</div>
             </div>
             <div>
               <div className="label" style={{ marginBottom: 10 }}>Vehicle</div>
@@ -52,7 +52,7 @@ function Slide01() {
             <div>
               <div className="label" style={{ marginBottom: 10 }}>Round</div>
               <div className="serif" style={{ fontSize: 22, lineHeight: 1.45, fontWeight: 380, color: "var(--text-dim)" }}>
-                Bridge · €250K<br/>Pre-grant operations
+                Bridge · €100K-250K<br/>Pre-grant operations
               </div>
             </div>
           </div>
@@ -117,20 +117,20 @@ function Slide02() {
         <div className="content-grid" style={{ display: "grid", gridTemplateColumns: "440px 1fr", gap: 56, marginTop: 36, flex: 1 }}>
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <div>
-              <div className="eyebrow" style={{ marginBottom: 28 }}>Validated by the field, in 24 hours</div>
+              <div className="eyebrow" style={{ marginBottom: 28 }}>Validated by the field, in 9 days</div>
               <h2 className="section-title" style={{ fontSize: 68, lineHeight: 1.1 }}>The problem,<br/><em>in their words.</em></h2>
               <p className="body" style={{ marginTop: 40 }}>
                 One outreach email, sent April 28–29, to 266 hemp professionals across
-                30+ countries. 21 unsolicited replies arrived inside 24 hours — a 7.9%
-                response rate against a cold-outreach industry average of 1–3%. 14 of
-                the 14 substantive replies confirmed the same diagnosis.
+                30+ countries. 30 unsolicited replies arrived inside 9 days — a 11.3%
+                response rate against a cold-outreach industry average of 1–3%. 23 of
+                the 23 substantive replies confirmed the same diagnosis.
               </p>
             </div>
 
             <div style={{ display: "flex", gap: 32, marginTop: 48 }}>
               <Stat n="266" l="Outreach" />
-              <Stat n="21" l="Substantive" />
-              <Stat n="7.9%" l="Response" />
+              <Stat n="30" l="Substantive" />
+              <Stat n="11.3%" l="Response" />
             </div>
           </div>
 
