@@ -17,24 +17,24 @@ function Slide08() {
       <div className="slide-inner" ref={ref}>
         <Chrome section="ACT III · THE MOMENT" label="TRACTION · LAST 72 HOURS" />
 
-        <div style={{ marginTop: 56 }}>
-          <div className="eyebrow" style={{ marginBottom: 24 }}>This is not projected. This happened last week.</div>
-          <h2 className="section-title" style={{ maxWidth: 1500 }}>
+        <div style={{ marginTop: 40 }}>
+          <div className="eyebrow" style={{ marginBottom: 18 }}>This is not projected. This happened last week.</div>
+          <h2 className="section-title" style={{ maxWidth: 1500, fontSize: 72 }}>
             9 days of <em>response</em> —<br/>23 substantive replies, all aligned.
           </h2>
         </div>
 
-        <div style={{ marginTop: 64, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
+        <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
           <BigStat n={266} label="Emails sent" sub="30+ countries · April 28–29" active={active} />
           <BigStat n={30} label="Replies in 9 days" sub="23 substantive · 7 OOO/auto" active={active} accent />
           <BigStat n={11.3} label="Response rate" suffix="%" decimals={1} sub="Industry average: 1–3%" active={active} />
           <BigStat n={23} label="Problem confirmed" sub="23 / 23 of substantive replies" active={active} />
         </div>
 
-        <div className="content-grid" style={{ marginTop: 36, display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, flex: 1 }}>
-          <div className="glass" style={{ padding: 36 }}>
-            <div className="label" style={{ color: "var(--teal)", marginBottom: 24 }}>WHO REPLIED — AND WHAT THEY ASKED FOR</div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+        <div className="content-grid" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, flex: 1 }}>
+          <div className="glass" style={{ padding: 28 }}>
+            <div className="label" style={{ color: "var(--teal)", marginBottom: 18 }}>WHO REPLIED — AND WHAT THEY ASKED FOR</div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               {[
                 { who: "Jeff Kostuik · CHTA / Verve Seeds (CA)", ask: "Requested a call" },
                 { who: "Marco Fugazza · UNCTAD (Intl)", ask: "Requested a call" },
@@ -45,29 +45,29 @@ function Slide08() {
                 { who: "Sepi Rad · HempGenTech Group", ask: "Requested deck + governance" },
                 { who: "+ 15 more substantive replies", ask: "Same diagnosis · 23 / 23" },
               ].map((r, i) => (
-                <div key={i} style={{ display: "grid", gridTemplateColumns: "10px 1fr", gap: 14, alignItems: "start", padding: "10px 0", borderBottom: i < 6 ? "1px solid var(--border)" : "none" }}>
-                  <div className="tick" style={{ marginTop: 8 }}></div>
+                <div key={i} style={{ display: "grid", gridTemplateColumns: "10px 1fr", gap: 12, alignItems: "start", padding: "10px 0", borderBottom: i < 6 ? "1px solid var(--border)" : "none" }}>
+                  <div className="tick" style={{ marginTop: 6 }}></div>
                   <div>
-                    <div className="serif" style={{ fontSize: 17, fontWeight: 420, color: "var(--text)" }}>{r.who}</div>
-                    <div className="mono" style={{ fontSize: 11, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 2 }}>{r.ask}</div>
+                    <div className="serif" style={{ fontSize: 15, fontWeight: 420, color: "var(--text)" }}>{r.who}</div>
+                    <div className="mono" style={{ fontSize: 10, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 2 }}>{r.ask}</div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="glass-teal" style={{ padding: 36, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+          <div className="glass-teal" style={{ padding: 28, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <div>
               <div className="label" style={{ color: "var(--teal)", marginBottom: 18 }}>WHY THIS MATTERS</div>
-              <div className="serif" style={{ fontSize: 22, fontWeight: 380, lineHeight: 1.35, color: "var(--text)" }}>
+              <div className="serif" style={{ fontSize: 19, fontWeight: 380, lineHeight: 1.35, color: "var(--text)" }}>
                 Cold outreach in B2B infrastructure converts at 1–3%. We hit <span style={{ color: "var(--teal-bright)" }}>11.3%</span> with no warm intro, no pitch deck, and no product to demo.
               </div>
             </div>
-            <div style={{ marginTop: 28 }}>
-              <div className="serif" style={{ fontSize: 18, fontWeight: 380, color: "var(--text)", lineHeight: 1.4 }}>
+            <div style={{ marginTop: 20 }}>
+              <div className="serif" style={{ fontSize: 16, fontWeight: 380, color: "var(--text)", lineHeight: 1.4 }}>
                 The signal is not "people will use this if you build it."
               </div>
-              <div className="serif" style={{ fontSize: 18, fontWeight: 420, color: "var(--teal-bright)", lineHeight: 1.4, marginTop: 8 }}>
+              <div className="serif" style={{ fontSize: 16, fontWeight: 420, color: "var(--teal-bright)", lineHeight: 1.4, marginTop: 6 }}>
                 It is "people are angry it does not exist yet."
               </div>
             </div>
@@ -135,10 +135,10 @@ function Slide09() {
               { label: "Countries in conversation", value: "6", sub: "Before a single product is live" },
               { label: "Financial partner role", value: "CFO partner", sub: "Structuring French Association + Commercial Entity" },
             ].map((item, i) => (
-              <div key={i} className="glass" style={{ padding: "18px 24px", display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", gap: 24 }}>
+              <div key={i} className="glass" style={{ padding: "18px 24px", display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", gap: 20 }}>
                 <div>
-                  <div className="serif" style={{ fontSize: 17, fontWeight: 420, color: "var(--text)" }}>{item.label}</div>
-                  <div className="mono" style={{ fontSize: 11, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 4 }}>{item.sub}</div>
+                  <div className="serif" style={{ fontSize: 15, fontWeight: 420, color: "var(--text)" }}>{item.label}</div>
+                  <div className="mono" style={{ fontSize: 10, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 4 }}>{item.sub}</div>
                 </div>
                 <div className="serif" style={{ fontSize: 36, fontWeight: 300, color: "var(--teal)", letterSpacing: "-0.02em" }}>{item.value}</div>
               </div>
@@ -202,16 +202,16 @@ function Slide10() {
         <Chrome section="ACT III · THE MOMENT" label="THE CAPITAL STACK" />
 
         <div style={{ marginTop: 48 }}>
-          <div className="eyebrow" style={{ marginBottom: 24 }}>Three non-competing sources, complementary by design</div>
-          <h2 className="section-title" style={{ maxWidth: 1500 }}>
+          <div className="eyebrow" style={{ marginBottom: 18 }}>Three non-competing sources, complementary by design</div>
+          <h2 className="section-title" style={{ maxWidth: 1500, fontSize: 72 }}>
             The bridge is the <em>smallest</em><br/>and most urgent piece.
           </h2>
         </div>
 
-        <div style={{ marginTop: 64, display: "grid", gridTemplateColumns: "1fr 720px", gap: 56, flex: 1 }}>
+        <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "1fr 720px", gap: 56, flex: 1 }}>
           <div>
             <div className="label" style={{ marginBottom: 20 }}>RELATIVE SCALE — HOVER TO INSPECT</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {SOURCES.map(s => {
                 const isActive = active === s.id;
                 return (
@@ -239,7 +239,7 @@ function Slide10() {
                         <div className="serif" style={{ fontSize: 24, fontWeight: 420, color: isActive ? s.color : "var(--text)" }}>{s.label}</div>
                         {s.highlight && <span className="pill" style={{ padding: "4px 10px", fontSize: 10 }}>THIS PITCH</span>}
                       </div>
-                      <div style={{ display: "flex", gap: 24 }}>
+                      <div style={{ display: "flex", gap: 20 }}>
                         <span className="mono" style={{ fontSize: 12, letterSpacing: "0.14em", color: "var(--text-faint)" }}>{s.type}</span>
                         <span className="mono" style={{ fontSize: 12, letterSpacing: "0.14em", color: "var(--text-faint)" }}>{s.timing}</span>
                       </div>
@@ -263,7 +263,7 @@ function Slide10() {
               <span className="pill-faint">{cur.type}</span>
               <span className="pill-faint">{cur.timing}</span>
             </div>
-            <div style={{ marginTop: 28, padding: 20, borderLeft: `2px solid ${cur.color}`, background: "rgba(255,255,255,0.02)" }}>
+            <div style={{ marginTop: 20, padding: 20, borderLeft: `2px solid ${cur.color}`, background: "rgba(255,255,255,0.02)" }}>
               <div className="label" style={{ marginBottom: 8 }}>WHAT IT FUNDS</div>
               <div className="serif" style={{ fontSize: 19, fontWeight: 380, lineHeight: 1.5, color: "var(--text-dim)" }}>{cur.funds}</div>
             </div>
@@ -314,11 +314,11 @@ function Slide11() {
       <div className="slide-inner">
         <Chrome section="ACT III · THE MOMENT" label="LEGAL STRUCTURE" />
 
-        <div className="content-grid" style={{ marginTop: 36, display: "grid", gridTemplateColumns: "1fr 880px", gap: 56, flex: 1 }}>
+        <div className="content-grid" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 880px", gap: 56, flex: 1 }}>
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <div className="eyebrow" style={{ marginBottom: 28 }}>Two-tier structure, mission-locked</div>
             <h2 className="section-title">A vehicle that<br/><em>cannot be captured.</em></h2>
-            <p className="body-large" style={{ marginTop: 36 }}>
+            <p className="body-large" style={{ marginTop: 28 }}>
               The architecture is deliberate. The IP and the mission live in a French
               non-profit association. Commercial exploitation lives in a separate
               operating company (S.à r.l. to be formed), incorporated once the EIC
@@ -330,13 +330,13 @@ function Slide11() {
               in the foundation itself.
             </p>
 
-            <div style={{ marginTop: 36, padding: 18, background: "rgba(16,185,129,0.05)", border: "1px solid var(--border-teal)", borderRadius: 12, display: "flex", alignItems: "center", gap: 16 }}>
+            <div style={{ marginTop: 28, padding: 18, background: "rgba(16,185,129,0.05)", border: "1px solid var(--border-teal)", borderRadius: 12, display: "flex", alignItems: "center", gap: 16 }}>
               <div style={{ width: 40, height: 40, borderRadius: 999, background: "rgba(16,185,129,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span className="serif" style={{ fontSize: 18, color: "var(--teal-bright)" }}>P</span>
+                <span className="serif" style={{ fontSize: 16, color: "var(--teal-bright)" }}>P</span>
               </div>
               <div>
-                <div className="serif" style={{ fontSize: 17, fontWeight: 420 }}>Paul Iglesia presents</div>
-                <div className="mono" style={{ fontSize: 11, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 2 }}>FOUNDER · FIELD ORIGINATOR</div>
+                <div className="serif" style={{ fontSize: 15, fontWeight: 420 }}>Paul Iglesia presents</div>
+                <div className="mono" style={{ fontSize: 10, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 2 }}>FOUNDER · FIELD ORIGINATOR</div>
               </div>
             </div>
           </div>
@@ -351,11 +351,11 @@ function Slide11() {
                   border: `1px solid ${e.now ? "var(--border-teal)" : "var(--border)"}`,
                   display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
-                  <span className="mono" style={{ fontSize: 18, fontWeight: 500, letterSpacing: "0.1em", color: e.now ? "var(--teal-bright)" : "var(--text-dim)" }}>{e.tag}</span>
+                  <span className="mono" style={{ fontSize: 16, fontWeight: 500, letterSpacing: "0.1em", color: e.now ? "var(--teal-bright)" : "var(--text-dim)" }}>{e.tag}</span>
                 </div>
                 <div>
-                  <div className="serif" style={{ fontSize: 18, fontWeight: 420, lineHeight: 1.2 }}>{e.name}</div>
-                  <div className="mono" style={{ fontSize: 11, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 4 }}>{e.sub.toUpperCase()}</div>
+                  <div className="serif" style={{ fontSize: 16, fontWeight: 420, lineHeight: 1.2 }}>{e.name}</div>
+                  <div className="mono" style={{ fontSize: 10, letterSpacing: "0.14em", color: "var(--text-faint)", marginTop: 4 }}>{e.sub.toUpperCase()}</div>
                   <div style={{ fontSize: 14, color: "var(--text-dim)", marginTop: 12, lineHeight: 1.5, maxWidth: 480 }}>{e.role}</div>
                 </div>
                 <div style={{ textAlign: "right" }}>
@@ -408,7 +408,7 @@ function Slide12() {
         <Chrome section="ACT III · THE MOMENT" label="THE ASK" />
 
         <div style={{ marginTop: 48 }}>
-          <div className="eyebrow" style={{ marginBottom: 24 }}>What the bridge funds, what is on offer, why now</div>
+          <div className="eyebrow" style={{ marginBottom: 18 }}>What the bridge funds, what is on offer, why now</div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr auto", alignItems: "end", gap: 48 }}>
             <h2 className="section-title">
               <em>€100,000 – €250,000</em> · 6–12 months ·<br/>founding stakeholder.
@@ -420,16 +420,16 @@ function Slide12() {
           </div>
         </div>
 
-        <div className="content-grid" style={{ marginTop: 36, display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 32, flex: 1 }}>
+        <div className="content-grid" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 32, flex: 1 }}>
           {/* Use of funds */}
-          <div className="glass" style={{ padding: 36 }}>
-            <div className="label" style={{ marginBottom: 24 }}>USE OF FUNDS — €100K-250K</div>
+          <div className="glass" style={{ padding: 28 }}>
+            <div className="label" style={{ marginBottom: 18 }}>USE OF FUNDS — €100K-250K</div>
             <div style={{ display: "flex", height: 26, borderRadius: 6, overflow: "hidden", border: "1px solid var(--border)" }}>
               {USES.map((u, i) => (
                 <div key={i} style={{ width: `${u.pct}%`, background: u.color, opacity: 0.85 }}></div>
               ))}
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 28 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 20 }}>
               {USES.map((u, i) => (
                 <div key={i} style={{ display: "grid", gridTemplateColumns: "12px 60px 1fr", alignItems: "center", gap: 16 }}>
                   <div style={{ width: 12, height: 12, borderRadius: 3, background: u.color }}></div>
@@ -439,7 +439,7 @@ function Slide12() {
               ))}
             </div>
 
-            <div className="divider" style={{ marginTop: 28 }}></div>
+            <div className="divider" style={{ marginTop: 20 }}></div>
             <div style={{ marginTop: 24 }}>
               <div className="label" style={{ marginBottom: 10 }}>WHEN CO-FUNDING IS AWARDED</div>
               <div className="serif" style={{ fontSize: 20, fontWeight: 380, lineHeight: 1.45, color: "var(--text)" }}>
@@ -451,7 +451,7 @@ function Slide12() {
           </div>
 
           {/* Instruments */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <div className="label">INSTRUMENTS — CHOOSE ONE OR BLEND</div>
             {INSTRUMENTS.map(ins => (
               <div key={ins.tag} className="glass" style={{ padding: 26, display: "grid", gridTemplateColumns: "60px 1fr", gap: 20, alignItems: "start" }}>
@@ -460,18 +460,18 @@ function Slide12() {
                   background: "rgba(16,185,129,0.08)", border: "1px solid var(--border-teal)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
-                  <span className="serif" style={{ fontSize: 18, fontWeight: 420, color: "var(--teal-bright)" }}>{ins.tag}</span>
+                  <span className="serif" style={{ fontSize: 16, fontWeight: 420, color: "var(--teal-bright)" }}>{ins.tag}</span>
                 </div>
                 <div>
-                  <div className="serif" style={{ fontSize: 18, fontWeight: 420, color: "var(--text)" }}>{ins.name}</div>
-                  <div style={{ fontSize: 14, color: "var(--text-dim)", marginTop: 8, lineHeight: 1.5 }}>{ins.desc}</div>
+                  <div className="serif" style={{ fontSize: 16, fontWeight: 420, color: "var(--text)" }}>{ins.name}</div>
+                  <div style={{ fontSize: 14, color: "var(--text-dim)", marginTop: 6, lineHeight: 1.5 }}>{ins.desc}</div>
                 </div>
               </div>
             ))}
 
             <div className="glass-teal" style={{ padding: 24, marginTop: 6 }}>
               <div className="label" style={{ color: "var(--teal)", marginBottom: 8 }}>WHY THIS MONTH SPECIFICALLY</div>
-              <div className="serif" style={{ fontSize: 17, fontWeight: 380, lineHeight: 1.5, color: "var(--text)" }}>
+              <div className="serif" style={{ fontSize: 15, fontWeight: 380, lineHeight: 1.5, color: "var(--text)" }}>
                 The foundation incorporates this month. Founding-stakeholder positions
                 are recorded in the constitutive documents. After the public co-funding
                 submission, the structure is sealed and the round closes.
@@ -500,7 +500,7 @@ function Slide13() {
       <div className="slide-inner">
         <Chrome section="ACT III · THE MOMENT" label="WHY NOW · WHY US" />
 
-        <div style={{ marginTop: 48, flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", maxWidth: 1500 }}>
+        <div style={{ marginTop: 48, flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", maxWidth: 1500, fontSize: 72 }}>
           <div className="eyebrow" style={{ marginBottom: 32 }}>Conviction, not a team slide</div>
           <h2 className="section-title" style={{ fontSize: 92, lineHeight: 0.98 }}>
             The EU is building <em>sovereign infrastructure.</em><br/>
@@ -508,7 +508,7 @@ function Slide13() {
             <span style={{ color: "var(--text-dim)" }}>We are building the layer underneath.</span>
           </h2>
 
-          <div style={{ marginTop: 64, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
+          <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
             <Conviction
               tag="01"
               title="The demand is verified"
@@ -532,13 +532,13 @@ function Slide13() {
             />
           </div>
 
-          <div style={{ marginTop: 64, padding: "32px 40px", borderLeft: "2px solid var(--teal)", background: "rgba(16,185,129,0.04)", maxWidth: 1500 }}>
+          <div style={{ marginTop: 48, padding: "32px 40px", borderLeft: "2px solid var(--teal)", background: "rgba(16,185,129,0.04)", maxWidth: 1500, fontSize: 72 }}>
             <div className="serif" style={{ fontSize: 30, fontWeight: 380, lineHeight: 1.35, color: "var(--text)" }}>
               One person already tried, and could not, because the layer below was missing.
               We are building that layer — on European technology, in the open, with a mission
               lock that protects the industry from the infrastructure being captured.
             </div>
-            <div style={{ display: "flex", gap: 32, marginTop: 28, alignItems: "center" }}>
+            <div style={{ display: "flex", gap: 32, marginTop: 20, alignItems: "center" }}>
               <div className="serif" style={{ fontSize: 20, fontWeight: 420 }}>Paul Iglesia</div>
               <div className="mono" style={{ fontSize: 12, letterSpacing: "0.16em", color: "var(--text-faint)" }}>·</div>
               <div className="mono" style={{ fontSize: 13, letterSpacing: "0.18em", color: "var(--teal-bright)" }}>INOS FOUNDATION FRANCE · MAY 2026</div>
@@ -554,7 +554,7 @@ function Slide13() {
 
 function Conviction({ tag, title, body, highlight }) {
   return (
-    <div className={highlight ? "glass-teal" : "glass"} style={{ padding: 28, display: "flex", flexDirection: "column", gap: 14 }}>
+    <div className={highlight ? "glass-teal" : "glass"} style={{ padding: 28, display: "flex", flexDirection: "column", gap: 12 }}>
       <div className="mono" style={{ fontSize: 13, letterSpacing: "0.22em", color: highlight ? "var(--teal)" : "var(--text-faint)" }}>{tag}</div>
       <div className="serif" style={{ fontSize: 24, fontWeight: 420, lineHeight: 1.2, color: highlight ? "var(--teal-bright)" : "var(--text)" }}>{title}</div>
       <div style={{ fontSize: 15, color: "var(--text-dim)", lineHeight: 1.5 }}>{body}</div>

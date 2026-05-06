@@ -78,7 +78,26 @@ html, body {
   display: flex;
   flex-direction: column;
   max-height: calc(100vh - 140px);
-  overflow: hidden;
+  overflow-y: auto;
+}
+
+/* Enable scrolling for content-heavy slides */
+.slide-inner::-webkit-scrollbar {
+  width: 8px;
+}
+
+.slide-inner::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+}
+
+.slide-inner::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 4px;
+}
+
+.slide-inner::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.5);
 }
 
 /* Content grid utility for scroll-safe inner layouts */
